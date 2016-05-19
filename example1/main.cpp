@@ -86,7 +86,8 @@ std::vector<std::vector<cv::Rect>> detectLetters(cv::Mat img, int x , int y , in
     return finalrect;
 }
 
-void Draw(Mat img2){
+void Draw(Mat img2 , int t){
+    
     std::vector<std::vector<cv::Rect>> finalrect1 =detectLetters(img2 ,350 ,50 ,500);
      std::vector<cv::Rect> letterBBoxes11;
      std::vector<cv::Rect> letterBBoxes12;
@@ -106,36 +107,135 @@ void Draw(Mat img2){
         for(int i=0; i< letterBBoxes12.size(); i++)
             cv::rectangle(img2,letterBBoxes12[i],cv::Scalar(255,0,0),3,8,0);
     }
-    cv::imwrite( "imgOut24.jpg", img2);
+    
+    string s  = "imgOut";
+    cv::imwrite( s.c_str()+ to_string(t) + ".jpg", img2);
 }
 
 int main(int argc,char** argv)
 {
     
-    cv::Mat img2=cv::imread("2.jpg");
-    cv::Mat img3=cv::imread("3.jpg");
-    cv::Mat img4=cv::imread("4.jpg");
-//    cv::Mat img5=cv::imread("5.jpg");
-//    cv::Mat img6=cv::imread("6.jpg");
-    cv::Mat img7=cv::imread("7.jpg");
-    cv::Mat img8=cv::imread("8.jpg");
-    cv::Mat img9=cv::imread("9.jpg");
-    cv::Mat img10=cv::imread("10.jpg");
-    cv::Mat img11=cv::imread("11.jpg");
-    cv::Mat img12=cv::imread("12.jpg");
-    cv::Mat img13=cv::imread("13.jpg");
-    cv::Mat img14=cv::imread("14.jpg");
-    cv::Mat img15=cv::imread("15.jpg");
-    cv::Mat img16=cv::imread("16.jpg");
-    cv::Mat img17=cv::imread("17.jpg");
-    cv::Mat img18=cv::imread("18.jpg");
-    cv::Mat img19=cv::imread("19.jpg");
-    cv::Mat img20=cv::imread("20.jpg");
-    cv::Mat img21=cv::imread("21.jpg");
-    cv::Mat img22=cv::imread("22.jpg");
-    cv::Mat img23=cv::imread("23.jpg");
-    cv::Mat img24=cv::imread("24.jpg");
-    Draw(img24);
+//    cv::Mat img2=cv::imread("2.jpg");
+//    cv::Mat img3=cv::imread("3.jpg");
+//    cv::Mat img4=cv::imread("4.jpg");
+////    cv::Mat img5=cv::imread("5.jpg");
+////    cv::Mat img6=cv::imread("6.jpg");
+//    cv::Mat img7=cv::imread("7.jpg");
+//    cv::Mat img8=cv::imread("8.jpg");
+//    cv::Mat img9=cv::imread("9.jpg");
+//    cv::Mat img10=cv::imread("10.jpg");
+//    cv::Mat img11=cv::imread("11.jpg");
+//    cv::Mat img12=cv::imread("12.jpg");
+//    cv::Mat img13=cv::imread("13.jpg");
+//    cv::Mat img14=cv::imread("14.jpg");
+//    cv::Mat img15=cv::imread("15.jpg");
+//    cv::Mat img16=cv::imread("16.jpg");
+//    cv::Mat img17=cv::imread("17.jpg");
+//    cv::Mat img18=cv::imread("18.jpg");
+//    cv::Mat img19=cv::imread("19.jpg");
+//    cv::Mat img20=cv::imread("20.jpg");
+//    cv::Mat img21=cv::imread("21.jpg");
+//    cv::Mat img22=cv::imread("22.jpg");
+//    cv::Mat img23=cv::imread("23.jpg");
+//    cv::Mat img24=cv::imread("24.jpg");
+//    cv::Mat img25=cv::imread("25.jpg");
+//    cv::Mat img26=cv::imread("26.jpg");
+//    cv::Mat img27=cv::imread("27.jpg");
+//    cv::Mat img28=cv::imread("28.jpg");
+//    cv::Mat img29=cv::imread("29.jpg");
+//    cv::Mat img30=cv::imread("30.jpg");
+    cv::Mat img31=cv::imread("31.jpg");
+    cv::Mat img32=cv::imread("32.jpg");
+    cv::Mat img33=cv::imread("33.jpg");
+    cv::Mat img34=cv::imread("34.jpg");
+    cv::Mat img35=cv::imread("35.jpg");
+    cv::Mat img36=cv::imread("36.jpg");
+    cv::Mat img37=cv::imread("37.jpg");
+    cv::Mat img38=cv::imread("38.jpg");
+    cv::Mat img39=cv::imread("39.jpg");
+    cv::Mat img40=cv::imread("40.jpg");
+    cv::Mat img41=cv::imread("41.jpg");
+    cv::Mat img42=cv::imread("42.jpg");
+    cv::Mat img43=cv::imread("43.jpg");
+    cv::Mat img44=cv::imread("44.jpg");
+    cv::Mat img45=cv::imread("45.jpg");
+    cv::Mat img46=cv::imread("46.jpg");
+    cv::Mat img47=cv::imread("47.jpg");
+    cv::Mat img48=cv::imread("48.jpg");
+    cv::Mat img49=cv::imread("49.jpg");
+    cv::Mat img50=cv::imread("50.jpg");
+    cv::Mat img51=cv::imread("51.jpg");
+    cv::Mat img52=cv::imread("52.jpg");
+    cv::Mat img53=cv::imread("53.jpg");
+    cv::Mat img54=cv::imread("54.jpg");
+    cv::Mat img55=cv::imread("55.jpg");
+    cv::Mat img56=cv::imread("56.jpg");
+    cv::Mat img57=cv::imread("57.jpg");
+    cv::Mat img58=cv::imread("58.jpg");
+    cv::Mat img59=cv::imread("59.jpg");
+    cv::Mat img60=cv::imread("60.jpg");
+    cv::Mat img61=cv::imread("61.jpg");
+    cv::Mat img62=cv::imread("62.jpg");
+    cv::Mat img63=cv::imread("63.jpg");
+    cv::Mat img64=cv::imread("64.jpg");
+    cv::Mat img65=cv::imread("65.jpg");
+    cv::Mat img66=cv::imread("66.jpg");
+    cv::Mat img67=cv::imread("67.jpg");
+    cv::Mat img68=cv::imread("68.jpg");
+    cv::Mat img69=cv::imread("69.jpg");
+    cv::Mat img70=cv::imread("70.jpg");
+    cv::Mat img71=cv::imread("71.jpg");
+    cv::Mat img72=cv::imread("72.jpg");
+    cv::Mat img73=cv::imread("73.jpg");
+    cv::Mat img74=cv::imread("74.jpg");
+    cv::Mat img75=cv::imread("75.jpg");
+    cv::Mat img76=cv::imread("76.jpg");
+    Draw(img31,31);
+    Draw(img32,32);
+    Draw(img33,33);
+    Draw(img34,34);
+    Draw(img35,35);
+    Draw(img36,36);
+    Draw(img37,37);
+    Draw(img38,38);
+    Draw(img39,39);
+    Draw(img40,40);
+    Draw(img41,41);
+    Draw(img42,42);
+    Draw(img43,43);
+    Draw(img44,44);
+    Draw(img45,45);
+    Draw(img46,46);
+    Draw(img47,47);
+    Draw(img48,48);
+    Draw(img49,49);
+    Draw(img50,50);
+    Draw(img51,51);
+    Draw(img52,52);
+    Draw(img53,53);
+    Draw(img54,54);
+    Draw(img55,55);
+    Draw(img56,56);
+    Draw(img57,57);
+    Draw(img58,58);
+    Draw(img59,59);
+    Draw(img60,60);
+    Draw(img61,61);
+    Draw(img62,62);
+    Draw(img63,63);
+    Draw(img64,64);
+    Draw(img65,65);
+    Draw(img66,66);
+    Draw(img67,67);
+    Draw(img68,68);
+    Draw(img69,69);
+    Draw(img70,70);
+    Draw(img71,71);
+    Draw(img72,72);
+    Draw(img73,73);
+    Draw(img74,74);
+    Draw(img75,75);
+    Draw(img76,76);
     return 0;
 }
 
