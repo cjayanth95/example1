@@ -67,7 +67,7 @@ std::vector<std::vector<cv::Rect>> detectLetters(cv::Mat img, int x , int y , in
         }
     }
     for (int v =0; v<boundRect1.size(); v++) {
-        if ((double) A[v]/boundRect1[v].area() > 0.1) {
+        if ((double) A[v]/boundRect1[v].area() > 0.15) {
             boundRect3.push_back(boundRect1[v]);
         }
         else{
@@ -78,7 +78,7 @@ std::vector<std::vector<cv::Rect>> detectLetters(cv::Mat img, int x , int y , in
         finalrect.push_back(boundRect4);
 
     for (int h =0; h<sr; h++) {
-        cout<<A[h]<<" "<<boundRect1[h].area()<<endl;
+        //cout<<A[h]<<" "<<boundRect1[h].area()<<endl;
     }
     
 
@@ -92,7 +92,7 @@ void Draw(Mat img2 , int t){
      std::vector<cv::Rect> letterBBoxes11;
      std::vector<cv::Rect> letterBBoxes12;
     if (finalrect1[0].size() == 0) {
-        cout<<"No text fields to display"<<endl;
+        //cout<<"No text fields to display"<<endl;
     }
     else{
         letterBBoxes11=finalrect1[0];
@@ -100,7 +100,7 @@ void Draw(Mat img2 , int t){
             cv::rectangle(img2,letterBBoxes11[i],cv::Scalar(0,255,0),3,8,0);
     }
     if (finalrect1[1].size() == 0) {
-        cout<<"No image fields to display"<<endl;
+        //cout<<"No image fields to display"<<endl;
     }
     else{
         letterBBoxes12=finalrect1[1];
