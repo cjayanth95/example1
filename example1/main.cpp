@@ -55,13 +55,13 @@ std::vector<std::vector<cv::Rect>> detectLetters(cv::Mat img, int x , int y , in
         {
             cv::approxPolyDP( cv::Mat(contours2[i]), contours_poly2[i],3, true );//approximates the contours with preicision = 3
             cv::Rect appRect( boundingRect( cv::Mat(contours_poly2[i]) ));
-            if (appRect.width>appRect.height)
+            if (appRect.width>=appRect.height)
                 boundRect2.push_back(appRect);
         }
     }
     for (int u =0; u<boundRect1.size(); u++) {
         for (int y =0; y<boundRect2.size(); y++) {
-            if ((boundRect2[y].br().x   <= boundRect1[u].br().x) && (boundRect2[y].br().y   <= boundRect1[u].br().y) && (boundRect2[y].tl().x   >= boundRect1[u].tl().x) && (boundRect2[y].tl().y   >= boundRect1[u].tl().y)) {
+            if ((boundRect2[y].br().x   <= boundRect1[u].br().x)+0.1 && (boundRect2[y].br().y   <= boundRect1[u].br().y)+0.1 && (boundRect2[y].tl().x+0.1   >= boundRect1[u].tl().x) && (boundRect2[y].tl().y+0.1   >= boundRect1[u].tl().y)) {
                 A[u] = A[u] + boundRect2[y].area();
             }
         }
@@ -88,7 +88,7 @@ std::vector<std::vector<cv::Rect>> detectLetters(cv::Mat img, int x , int y , in
 
 void Draw(Mat img2 , int t){
     
-    std::vector<std::vector<cv::Rect>> finalrect1 =detectLetters(img2 ,350 ,50 ,500);
+    std::vector<std::vector<cv::Rect>> finalrect1 =detectLetters(img2 ,280 ,40 ,500);
      std::vector<cv::Rect> letterBBoxes11;
      std::vector<cv::Rect> letterBBoxes12;
     if (finalrect1[0].size() == 0) {
@@ -120,30 +120,30 @@ int main(int argc,char** argv)
 //    cv::Mat img4=cv::imread("4.jpg");
 ////    cv::Mat img5=cv::imread("5.jpg");
 ////    cv::Mat img6=cv::imread("6.jpg");
-//    cv::Mat img7=cv::imread("7.jpg");
-//    cv::Mat img8=cv::imread("8.jpg");
-//    cv::Mat img9=cv::imread("9.jpg");
-//    cv::Mat img10=cv::imread("10.jpg");
-//    cv::Mat img11=cv::imread("11.jpg");
-//    cv::Mat img12=cv::imread("12.jpg");
-//    cv::Mat img13=cv::imread("13.jpg");
-//    cv::Mat img14=cv::imread("14.jpg");
-//    cv::Mat img15=cv::imread("15.jpg");
-//    cv::Mat img16=cv::imread("16.jpg");
-//    cv::Mat img17=cv::imread("17.jpg");
-//    cv::Mat img18=cv::imread("18.jpg");
-//    cv::Mat img19=cv::imread("19.jpg");
-//    cv::Mat img20=cv::imread("20.jpg");
-//    cv::Mat img21=cv::imread("21.jpg");
-//    cv::Mat img22=cv::imread("22.jpg");
-//    cv::Mat img23=cv::imread("23.jpg");
-//    cv::Mat img24=cv::imread("24.jpg");
-//    cv::Mat img25=cv::imread("25.jpg");
-//    cv::Mat img26=cv::imread("26.jpg");
-//    cv::Mat img27=cv::imread("27.jpg");
-//    cv::Mat img28=cv::imread("28.jpg");
-//    cv::Mat img29=cv::imread("29.jpg");
-//    cv::Mat img30=cv::imread("30.jpg");
+    cv::Mat img7=cv::imread("7.jpg");
+    cv::Mat img8=cv::imread("8.jpg");
+    cv::Mat img9=cv::imread("9.jpg");
+    cv::Mat img10=cv::imread("10.jpg");
+    cv::Mat img11=cv::imread("11.jpg");
+    cv::Mat img12=cv::imread("12.jpg");
+    cv::Mat img13=cv::imread("13.jpg");
+    cv::Mat img14=cv::imread("14.jpg");
+    cv::Mat img15=cv::imread("15.jpg");
+    cv::Mat img16=cv::imread("16.jpg");
+    cv::Mat img17=cv::imread("17.jpg");
+    cv::Mat img18=cv::imread("18.jpg");
+    cv::Mat img19=cv::imread("19.jpg");
+    cv::Mat img20=cv::imread("20.jpg");
+    cv::Mat img21=cv::imread("21.jpg");
+    cv::Mat img22=cv::imread("22.jpg");
+    cv::Mat img23=cv::imread("23.jpg");
+    cv::Mat img24=cv::imread("24.jpg");
+    cv::Mat img25=cv::imread("25.jpg");
+    cv::Mat img26=cv::imread("26.jpg");
+    cv::Mat img27=cv::imread("27.jpg");
+    cv::Mat img28=cv::imread("28.jpg");
+    cv::Mat img29=cv::imread("29.jpg");
+    cv::Mat img30=cv::imread("30.jpg");
     cv::Mat img31=cv::imread("31.jpg");
     cv::Mat img32=cv::imread("32.jpg");
     cv::Mat img33=cv::imread("33.jpg");
@@ -190,6 +190,8 @@ int main(int argc,char** argv)
     cv::Mat img74=cv::imread("74.jpg");
     cv::Mat img75=cv::imread("75.jpg");
     cv::Mat img76=cv::imread("76.jpg");
+    cv::Mat img78=cv::imread("78.jpg");
+
     Draw(img31,31);
     Draw(img32,32);
     Draw(img33,33);
@@ -236,6 +238,9 @@ int main(int argc,char** argv)
     Draw(img74,74);
     Draw(img75,75);
     Draw(img76,76);
+    Draw(img78,78);
+    
+   
     return 0;
 }
 
